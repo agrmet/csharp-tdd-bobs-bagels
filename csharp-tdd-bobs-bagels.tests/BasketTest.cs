@@ -9,6 +9,7 @@ public class BasketTest
     public void AddBagelTest()
     {
         Basket basket = new();
+        basket.basket.Capacity = 1;
         string bagel = "Bagel";
 
         var result = basket.Add(bagel);
@@ -19,6 +20,7 @@ public class BasketTest
     public void AddBagelExistsTest()
     {
         Basket basket = new();
+        basket.basket.Capacity = 1;
         string bagel = "Bagel";
 
         var result = basket.Add(bagel);
@@ -30,6 +32,7 @@ public class BasketTest
     public void RemoveBagelTest()
     {
         Basket basket = new();
+        basket.basket.Capacity = 1;
         string bagel = "Bagel";
 
         basket.Add(bagel);

@@ -8,6 +8,7 @@ namespace csharp_tdd_bobs_bagels.Main
         private List<string> _basket = [];
         public bool Add(string bagel)
         {
+            if (basket.Capacity == basket.Count()) return false;
             _basket.Add(bagel);
             return true;
         }
