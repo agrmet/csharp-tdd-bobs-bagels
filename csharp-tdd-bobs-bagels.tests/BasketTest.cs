@@ -54,4 +54,18 @@ public class BasketTest
         Assert.That(result1, Is.True);
         Assert.That(result2, Is.False);
     }
+
+    [Test]
+    public void ChangeCapacityTest()
+    {
+        Basket basket = new();
+        int initialCapacity = 1;
+        int changedCapacity = 2;
+
+        basket.basket.Capacity = initialCapacity;
+
+        basket.basket.Capacity = changedCapacity;
+
+        Assert.AreEqual(basket.basket.Capacity, changedCapacity);
+    }
 }
