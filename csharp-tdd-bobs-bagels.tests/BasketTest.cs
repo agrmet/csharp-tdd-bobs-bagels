@@ -16,4 +16,14 @@ public class BasketTest
 
         Assert.That(result, Is.True);
     }
+    [Test]
+    public void AddBagelExistsTest()
+    {
+        Basket basket = new();
+        string bagel = "Bagel";
+
+        var result = basket.Add(bagel);
+
+        Assert.That(basket.basket.Contains(bagel), Is.True);
+    }
 }
