@@ -14,7 +14,7 @@ namespace csharp_tdd_bobs_bagels.Main
 
         public bool Remove(string bagel)
         {
-            throw new NotImplementedException();
+            return _basket.Remove(bagel);
         }
 
         public List<string> basket { get { return _basket; } }
