@@ -29,18 +29,6 @@ public class BasketTest
     }
 
     [Test]
-    public void RemoveBagelTest()
-    {
-        Basket basket = new();
-        basket.basket.Capacity = 1;
-        string bagel = "Bagel";
-
-        basket.Add(bagel);
-        var result = basket.Remove(bagel);
-
-        Assert.That(result, Is.True);
-    }
-    [Test]
     public void AddingBagelBeyondCapacityTest()
     {
         Basket basket = new();
@@ -53,6 +41,33 @@ public class BasketTest
 
         Assert.That(result1, Is.True);
         Assert.That(result2, Is.False);
+    }
+    [Test]
+    public void RemoveBagelTest()
+    {
+        Basket basket = new();
+        basket.basket.Capacity = 1;
+        string bagel = "Bagel";
+
+        basket.Add(bagel);
+        var result = basket.Remove(bagel);
+
+        Assert.That(result, Is.True);
+    }
+
+    [Test]
+    public void RemoveUnexistingBagelTest()
+    {
+        Basket basket = new();
+        basket.basket.Capacity = 1;
+        var bagel = "Bagel";
+        var imaginaryBagel = "Hookus Pookus";
+
+        basket.Add(bagel);
+
+        var result = basket.Remove(imaginaryBagel);
+
+        Assert.That(result, Is.False);
     }
 
     [Test]
