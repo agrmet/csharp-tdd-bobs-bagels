@@ -26,4 +26,16 @@ public class BasketTest
 
         Assert.That(basket.basket.Contains(bagel), Is.True);
     }
+
+    [Test]
+    public void RemoveBagelTest()
+    {
+        Basket basket = new();
+        string bagel = "Bagel";
+
+        basket.Add(bagel);
+        var result = basket.Remove(bagel);
+
+        Assert.That(result, Is.True);
+    }
 }

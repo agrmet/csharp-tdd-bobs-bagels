@@ -1,5 +1,6 @@
 ﻿
 
+
 namespace csharp_tdd_bobs_bagels.Main
 {
     public class Basket
@@ -10,6 +11,12 @@ namespace csharp_tdd_bobs_bagels.Main
             _basket.Add(bagel);
             return true;
         }
+
+        public bool Remove(string bagel)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<string> basket { get { return _basket; } }
     }
 }
