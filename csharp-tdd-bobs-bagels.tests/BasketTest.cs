@@ -66,6 +66,6 @@ public class BasketTest
 
         basket.basket.Capacity = changedCapacity;
 
-        Assert.AreEqual(basket.basket.Capacity, changedCapacity);
+        Assert.That(changedCapacity, Is.EqualTo(basket.basket.Capacity));
     }
 }
