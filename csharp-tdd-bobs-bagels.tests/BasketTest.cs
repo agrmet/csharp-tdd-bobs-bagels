@@ -5,7 +5,6 @@ namespace csharp_tdd_bobs_bagels.tests;
 public class BasketTest
 {
 
-
     [Test]
     public void AddBagelTest()
     {
@@ -37,5 +36,19 @@ public class BasketTest
         var result = basket.Remove(bagel);
 
         Assert.That(result, Is.True);
+    }
+    [Test]
+    public void AddingBagelBeyondCapacityTest()
+    {
+        Basket basket = new();
+        basket.basket.Capacity = 1;
+        string bagel = "Bagel";
+        string specialBagel = "specialBagel";
+
+        var result1 = basket.Add(bagel);
+        var result2 = basket.Add(specialBagel);
+
+        Assert.That(result1, Is.True);
+        Assert.That(result2, Is.False);
     }
 }
