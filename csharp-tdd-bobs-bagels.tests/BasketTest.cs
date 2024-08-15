@@ -14,7 +14,7 @@ public class BasketTest
 
         var result = basket.Add(bagel);
 
-        Assert.That(result, Is.True);
+        Assert.That(basket.basket, Does.Contain(bagel));
     }
     [Test]
     public void AddBagelExistsTest()
@@ -25,7 +25,7 @@ public class BasketTest
 
         var result = basket.Add(bagel);
 
-        Assert.That(basket.basket.Contains(bagel), Is.True);
+        Assert.That(basket.basket, Does.Contain(bagel));
     }
 
     [Test]
@@ -39,6 +39,7 @@ public class BasketTest
         var result1 = basket.Add(bagel);
         var result2 = basket.Add(specialBagel);
 
+        Assert.That(basket.basket.Count == 1);
         Assert.That(result1, Is.True);
         Assert.That(result2, Is.False);
     }
@@ -53,6 +54,7 @@ public class BasketTest
         var result = basket.Remove(bagel);
 
         Assert.That(result, Is.True);
+        Assert.That(basket.basket.Contains(bagel), Is.False);
     }
 
     [Test]
